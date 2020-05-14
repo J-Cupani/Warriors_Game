@@ -1,6 +1,4 @@
-package com.company;
-
-import java.util.Scanner;
+package com.company.Personnage;
 
 public class Guerrier extends Personnage {
 

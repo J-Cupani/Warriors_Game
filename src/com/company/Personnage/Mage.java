@@ -1,4 +1,6 @@
-package com.company;
+package com.company.Personnage;
+
+import com.company.Personnage.Personnage;
 
 public class Mage extends Personnage {
     public Mage() {
@@ -24,4 +26,5 @@ public class Mage extends Personnage {
                 ", niveauVie=" + niveauVie +
                 ", forceAttaque=" + forceAttaque +
                 ']';
-    }}
+    }
+}

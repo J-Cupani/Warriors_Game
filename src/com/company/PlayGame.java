@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.Personnage.Mage;
+import com.company.Personnage.Personnage;
+
 import java.util.Scanner;
 
 public class PlayGame {

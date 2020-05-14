@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Personnage;
 
 public class Personnage {
     protected String nom;
