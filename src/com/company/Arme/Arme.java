@@ -1,6 +1,8 @@
 package com.company.Arme;
 
-public class Arme {
+import com.company.Plateau.Case;
+
+public class Arme extends Case {
 
 
     protected String nomArme;
@@ -32,5 +34,14 @@ public class Arme {
         this.forceArme = pForceArme;
     }
 
+    public int addPuissance(){
+        return this.forceArme;
+    }
+
+    @Override
+    public String toString() {
+        return "Arme: '" + nomArme + '\'' +
+                ", Puissance: " + forceArme;
+    }
 
 }

@@ -24,6 +24,7 @@ public class Guerrier extends Personnage {
                 "nom='" + nom + '\'' +
                 ", niveauVie=" + niveauVie +
                 ", forceAttaque=" + forceAttaque +
+                ", " + setArme() +
                 ']';
     }
 }

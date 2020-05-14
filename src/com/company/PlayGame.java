@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.Arme.Arme;
+import com.company.Arme.Epee;
+import com.company.Personnage.Guerrier;
 import com.company.Personnage.Mage;
 import com.company.Personnage.Personnage;
 
@@ -14,6 +17,7 @@ public class PlayGame {
         PlayGame game = new PlayGame();
         String namePerso = menu.chooseName(input);
         Personnage perso = game.createPerso(choice, namePerso);
+        perso.setArme();
         System.out.println(perso);
         game.partie();
         String replay = menu.finalChoice(input);
@@ -59,6 +63,7 @@ public class PlayGame {
             System.out.println("A bientot !!!!!");
         }
     }
+
 }
 
 

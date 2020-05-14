@@ -10,11 +10,4 @@ public class Massue extends Arme {
         super(pNomArme, pForceArme);
     }
 
-    @Override
-    public String toString() {
-        return "Massue:" +
-                "nomArme='" + nomArme + '\'' +
-                ", forceArme=" + forceArme;
-    }
-
 }

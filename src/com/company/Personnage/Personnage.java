@@ -1,9 +1,15 @@
 package com.company.Personnage;
 
-public class Personnage {
+import com.company.Arme.Arme;
+import com.company.Arme.Epee;
+import com.company.Arme.Massue;
+
+public abstract class Personnage {
     protected String nom;
     protected int niveauVie;
     protected int forceAttaque;
+    protected Arme arme = new Arme();
+
 
     //************* GETTER *************
 
@@ -47,6 +53,11 @@ public class Personnage {
         this.nom = pNom;
         this.niveauVie = pNiveauVie;
         this.forceAttaque = pForceAttaque;
+    }
+
+    public Arme setArme() {
+        this.forceAttaque = forceAttaque + arme.addPuissance();
+        return arme;
     }
 
 }

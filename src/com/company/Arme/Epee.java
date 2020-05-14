@@ -11,11 +11,6 @@ public class Epee extends Arme {
         super(pNomArme, pForceArme);
     }
 
-    @Override
-    public String toString() {
-        return "Epee:" +
-                "nomArme='" + nomArme + '\'' +
-                ", forceArme=" + forceArme;
-    }
+
 
 }
