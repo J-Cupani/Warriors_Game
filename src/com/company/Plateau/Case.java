@@ -1,6 +1,11 @@
 package com.company.Plateau;
 
-public class Case {
-    String cases;
-}
+import com.company.Personnage.Personnage;
 
+public abstract class Case {
+    String cases;
+
+
+    public void interract(Personnage personnage) {
+    }
+}

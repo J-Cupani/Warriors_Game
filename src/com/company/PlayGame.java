@@ -20,7 +20,7 @@ public class PlayGame {
         Personnage perso = game.createPerso(choice, namePerso);
         System.out.println(perso);
         Plateau plateau = new Plateau();
-        game.partie(plateau.getPlateauLongueur(), plateau.getPlateau(), plateau.getPosition());
+        game.partie(plateau.getPlateauLongueur(), plateau.getPlateau(), plateau.getPosition(), perso);
         String replay = menu.finalChoice(input);
         game.replay(replay, input);
     }
@@ -40,7 +40,7 @@ public class PlayGame {
         return dice;
     }
 
-    public void partie(int plateauLongueur, ArrayList<Case> plateauJeu, int position) {
+    public void partie(int plateauLongueur, ArrayList<Case> plateauJeu, int position, Personnage perso) {
         ArrayList<Case> cases = plateauJeu;
         while (position < plateauLongueur) {
             int dice = lancesDes();
@@ -49,7 +49,10 @@ public class PlayGame {
                 if (position == i) {
                     System.out.println("------------------------------------");
                     System.out.println("le joueur se trouve sur la case : " + position);
-                    System.out.println(cases.get(i));
+                    Case caseActive = cases.get(i);
+                    caseActive.interract(perso);
+                    System.out.println(caseActive);
+                    System.out.println(perso);
                 }
             }
         }

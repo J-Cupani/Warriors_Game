@@ -8,9 +8,7 @@ public abstract class Personnage {
     protected String nom;
     protected int niveauVie;
     protected int forceAttaque;
-    protected Arme arme = new Epee();
-    protected Potion potion = new Potion();
-
+    protected Arme arme = new Arme();
 
     //************* GETTER *************
 
@@ -56,13 +54,12 @@ public abstract class Personnage {
         this.forceAttaque = pForceAttaque;
     }
 
-    public Arme setArme() {
-        this.forceAttaque = forceAttaque + arme.getForceArme();
-        return arme;
+    public void setArme(int arme) {
+        this.forceAttaque = forceAttaque + arme;
     }
 
-    public void setPotion() {
-        this.niveauVie = niveauVie + potion.getPuissanceSoin();
+    public void setPotion(int potion) {
+        this.niveauVie = this.niveauVie + potion;
     }
 
 }

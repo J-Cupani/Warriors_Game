@@ -1,5 +1,6 @@
 package com.company.Potion;
 
+import com.company.Personnage.Personnage;
 import com.company.Plateau.Case;
 
 public class Potion extends Case {
@@ -39,4 +40,9 @@ public class Potion extends Case {
                 "] }";
     }
 
+
+    public void interract(Personnage personnage) {
+        personnage.setPotion(this.puissanceSoin);
+
+    }
 }
