@@ -4,7 +4,6 @@ import com.company.Plateau.Case;
 
 public class Arme extends Case {
 
-
     protected String nomArme;
     protected int forceArme;
 
@@ -34,14 +33,11 @@ public class Arme extends Case {
         this.forceArme = pForceArme;
     }
 
-    public int addPuissance(){
-        return this.forceArme;
-    }
-
     @Override
     public String toString() {
-        return "Arme: '" + nomArme + '\'' +
-                ", Puissance: " + forceArme;
+        return "{ " + nomArme +
+                ", Puissance[" + forceArme+
+                "] }";
     }
 
 }

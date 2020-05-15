@@ -10,10 +10,4 @@ public class Eclair extends Arme{
         super(pNomArme, pForceArme);
     }
 
-    @Override
-    public String toString() {
-        return "Eclair:" +
-                "nomArme='" + nomArme + '\'' +
-                ", forceArme=" + forceArme;
-    }
 }

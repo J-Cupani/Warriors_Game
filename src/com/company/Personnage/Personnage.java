@@ -2,13 +2,14 @@ package com.company.Personnage;
 
 import com.company.Arme.Arme;
 import com.company.Arme.Epee;
-import com.company.Arme.Massue;
+import com.company.Potion.Potion;
 
 public abstract class Personnage {
     protected String nom;
     protected int niveauVie;
     protected int forceAttaque;
-    protected Arme arme = new Arme();
+    protected Arme arme = new Epee();
+    protected Potion potion = new Potion();
 
 
     //************* GETTER *************
@@ -56,8 +57,12 @@ public abstract class Personnage {
     }
 
     public Arme setArme() {
-        this.forceAttaque = forceAttaque + arme.addPuissance();
+        this.forceAttaque = forceAttaque + arme.getForceArme();
         return arme;
+    }
+
+    public void setPotion() {
+        this.niveauVie = niveauVie + potion.getPuissanceSoin();
     }
 
 }

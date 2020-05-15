@@ -1,7 +1,11 @@
 package com.company.Plateau;
 
-import com.company.Arme.Epee;
-import com.company.Arme.Massue;
+import com.company.Arme.*;
+import com.company.Monstre.Dragon;
+import com.company.Monstre.Gobellin;
+import com.company.Monstre.Sorcier;
+import com.company.Potion.GrandePotion;
+import com.company.Potion.PotionStandard;
 
 import java.util.ArrayList;
 
@@ -48,11 +52,11 @@ public class Plateau {
                 case 8:
                 case 17:
                 case 23:
-                    plateau.add("Eclair");
+                    plateau.add(new Eclair());
                     break;
                 case 48:
                 case 49:
-                    plateau.add("Boule de feu");
+                    plateau.add(new BouleDeFeu());
                     break;
                 case 7:
                 case 13:
@@ -60,17 +64,17 @@ public class Plateau {
                 case 33:
                 case 39:
                 case 43:
-                    plateau.add("Potion Standards");
+                    plateau.add(new PotionStandard());
                     break;
                 case 28:
                 case 41:
-                    plateau.add("Grande Potion");
+                    plateau.add(new GrandePotion());
                     break;
                 case 45:
                 case 52:
                 case 56:
                 case 62:
-                    plateau.add("Dragon");
+                    plateau.add(new Dragon());
                     break;
                 case 10:
                 case 20:
@@ -82,7 +86,7 @@ public class Plateau {
                 case 40:
                 case 44:
                 case 47:
-                    plateau.add("Sorcier");
+                    plateau.add(new Sorcier());
                     break;
                 case 3:
                 case 6:
@@ -94,24 +98,12 @@ public class Plateau {
                 case 24:
                 case 27:
                 case 30:
-                    plateau.add("Gobelin");
+                    plateau.add(new Gobellin());
                     break;
                 default:
                     plateau.add("Case Vide");
             }
         }
         System.out.println(plateau);
-
     }
-
-    //   public void avancementPosition()
-
-//
-//        while (position < plateau) {
-//            int dice = lancesDes();
-//            position = position + dice;
-//            System.out.println("le joueur se trouve sur la case : " + position);
-//        }
-//        System.out.println("Felicitation vous avez gagné la partie !!!!!!!!!");
-//    }
 }
