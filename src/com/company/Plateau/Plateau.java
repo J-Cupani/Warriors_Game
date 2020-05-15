@@ -1,6 +1,9 @@
 package com.company.Plateau;
 
-import com.company.Arme.*;
+import com.company.Arme.BouleDeFeu;
+import com.company.Arme.Eclair;
+import com.company.Arme.Epee;
+import com.company.Arme.Massue;
 import com.company.Monstre.Dragon;
 import com.company.Monstre.Gobellin;
 import com.company.Monstre.Sorcier;
@@ -10,16 +13,24 @@ import com.company.Potion.PotionStandard;
 import java.util.ArrayList;
 
 public class Plateau {
-    private ArrayList plateau = new ArrayList();
+    private ArrayList<Case> plateau = new ArrayList<Case>();
     private int plateauLongueur;
     private int position;
 
-    public int getPlateau() {
+    public ArrayList<Case> getPlateau() {
+        return plateau;
+    }
+
+    public void setPlateau(ArrayList<Case> plateau) {
+        this.plateau = plateau;
+    }
+
+    public int getPlateauLongueur() {
         return plateauLongueur;
     }
 
-    public void setPlateau(int pPlateauLongueur) {
-        this.plateauLongueur = pPlateauLongueur;
+    public void setPlateauLongueur(int plateauLongueur) {
+        this.plateauLongueur = plateauLongueur;
     }
 
     public int getPosition() {
@@ -31,6 +42,7 @@ public class Plateau {
     }
 
     public Plateau() {
+        this.position = 1;
         this.plateauLongueur = 64;
         for (int i = 0; i < plateauLongueur; i++) {
             switch (i) {
@@ -101,7 +113,7 @@ public class Plateau {
                     plateau.add(new Gobellin());
                     break;
                 default:
-                    plateau.add("Case Vide");
+                    plateau.add(new Casevide());
             }
         }
         System.out.println(plateau);

@@ -1,11 +1,12 @@
 package com.company;
 
-import com.company.Arme.Arme;
-import com.company.Arme.Epee;
 import com.company.Personnage.Guerrier;
 import com.company.Personnage.Mage;
 import com.company.Personnage.Personnage;
+import com.company.Plateau.Case;
+import com.company.Plateau.Plateau;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PlayGame {
@@ -17,9 +18,9 @@ public class PlayGame {
         PlayGame game = new PlayGame();
         String namePerso = menu.chooseName(input);
         Personnage perso = game.createPerso(choice, namePerso);
-        perso.setArme();
         System.out.println(perso);
-        game.partie();
+        Plateau plateau = new Plateau();
+        game.partie(plateau.getPlateauLongueur(), plateau.getPlateau(), plateau.getPosition());
         String replay = menu.finalChoice(input);
         game.replay(replay, input);
     }
@@ -39,19 +40,25 @@ public class PlayGame {
         return dice;
     }
 
-    public void partie() {
-        int plateau = 64;
-        int position = 1;
-        while (position < plateau) {
+    public void partie(int plateauLongueur, ArrayList<Case> plateauJeu, int position) {
+        ArrayList<Case> cases = plateauJeu;
+        while (position < plateauLongueur) {
             int dice = lancesDes();
             position = position + dice;
-            System.out.println("le joueur se trouve sur la case : " + position);
+            for (int i = 0; i < cases.size(); i++) {
+                if (position == i) {
+                    System.out.println("------------------------------------");
+                    System.out.println("le joueur se trouve sur la case : " + position);
+                    System.out.println(cases.get(i));
+                }
+            }
         }
         System.out.println("Felicitation vous avez gagné la partie !!!!!!!!!");
     }
 
     /**
      * Permet de relancer la partie
+     *
      * @param replayChoice
      * @param input
      */

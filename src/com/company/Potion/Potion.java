@@ -1,6 +1,8 @@
 package com.company.Potion;
 
-public class Potion {
+import com.company.Plateau.Case;
+
+public class Potion extends Case {
     protected String nomPotion;
     protected int puissanceSoin;
 
